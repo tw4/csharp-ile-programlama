@@ -1,0 +1,12 @@
+# Kod 38.2 — .editorconfig ile takım standardını kodla sabitlemek
+# EditorConfig, Analyzer ve Kod Stili Zorlaması
+
+root = true
+
+[*.cs]
+indent_size = 4
+dotnet_sort_system_directives_first = true
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+dotnet_diagnostic.CA2007.severity = none
+dotnet_diagnostic.IDE0055.severity = error

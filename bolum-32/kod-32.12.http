@@ -1,0 +1,20 @@
+# Kod 32.12 — Postman'e gerek kalmadan istek göndermek (GorevApi.http)
+# .http Dosyası ile API’yi Denemek
+
+@host = https://localhost:7178
+
+### Tüm görevleri listele
+GET {{host}}/api/v1/gorevler
+Accept: application/json
+
+### Yeni görev oluştur
+POST {{host}}/api/v1/gorevler
+Content-Type: application/json
+
+{
+  "baslik": "Kitabın 32. bölümünü yaz",
+  "bitis": "2026-08-15"
+}
+
+### Sil
+DELETE {{host}}/api/v1/gorevler/1

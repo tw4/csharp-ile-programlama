@@ -1,0 +1,12 @@
+# Kod 34.1 — Kod yazmadan önce sözleşmeyi belirlemek
+# Gereksinimler ve Uç Nokta Tasarımı
+
+GET    /api/v1/gorevler?ara=&tamamlandi=&sayfa=1&boyut=20   -> 200 SayfaliSonuc
+GET    /api/v1/gorevler/{id}                                -> 200 | 404
+POST   /api/v1/gorevler                                     -> 201 | 400
+PUT    /api/v1/gorevler/{id}                                -> 204 | 400 | 404
+PATCH  /api/v1/gorevler/{id}/tamamla                        -> 204 | 404
+DELETE /api/v1/gorevler/{id}                                -> 204 | 404
+
+Kurallar: başlık zorunlu (3-200 karakter), bitiş tarihi geçmiş olamaz,
+tamamlanmış görev güncellenemez.

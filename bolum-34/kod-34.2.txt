@@ -1,0 +1,12 @@
+GorevYonetimi.sln
+├── src/
+│   ├── GorevYonetimi.Api/          # uç noktalar, DI, yapılandırma
+│   ├── GorevYonetimi.Core/         # varlıklar, arayüzler, iş kuralları
+│   └── GorevYonetimi.Data/         # DbContext, migration, depo uygulamaları
+└── tests/
+    ├── GorevYonetimi.UnitTests/
+    └── GorevYonetimi.IntegrationTests/
+
+dotnet new sln -n GorevYonetimi
+dotnet sln add src/**/*.csproj tests/**/*.csproj
+dotnet add src/GorevYonetimi.Api reference src/GorevYonetimi.Core

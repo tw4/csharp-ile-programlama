@@ -1,0 +1,14 @@
+@* Kod 35.1 — Basit bir Blazor bileşeni
+   Blazor ile Web Arayüzü — Genel Bakış *@
+
+@page "/sayac"
+
+<h3>Sayaç</h3>
+<p>Değer: @_deger</p>
+<button class="btn btn-primary" @onclick="Artir">Artır</button>
+
+@code {
+    private int _deger;
+
+    private void Artir() => _deger++;
+}

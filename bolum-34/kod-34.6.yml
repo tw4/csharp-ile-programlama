@@ -1,0 +1,19 @@
+# Kod 34.6 — API'yi ve veritabanını birlikte ayağa kaldırmak
+# Docker ile Çalıştırma
+
+services:
+  api:
+    build: .
+    ports: ["8080:8080"]
+    environment:
+      - ConnectionStrings__Gorev=Host=db;Database=gorev;Username=postgres;Password=gizli
+    depends_on: [db]
+
+  db:
+    image: postgres:17
+    environment:
+      - POSTGRES_PASSWORD=gizli
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+volumes:
+  pgdata:

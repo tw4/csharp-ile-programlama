@@ -1,0 +1,8 @@
+<PropertyGroup>
+  <PublishAot>true</PublishAot>
+  <InvariantGlobalization>true</InvariantGlobalization>
+  <StripSymbols>true</StripSymbols>
+</PropertyGroup>
+
+<!-- Uyarı: Yansıma (reflection) ve dinamik kod üretimi kısıtlıdır.
+     JSON için kaynak üreteçli bağlam kullanın. -->
