@@ -8,12 +8,15 @@ app.MapGet("/gorevler/{id:int}", (int id) => $"Görev {id}");
 app.MapGet("/gorevler/ara", (string metin, int sayfa = 1) => $"{metin} - {sayfa}");
 
 // Gövde (JSON) + servis + başlık
-app.MapPost("/gorevler", (GorevDto dto,
-                          GorevContext db,
-                          [FromHeader(Name = "X-Kaynak")] string? kaynak) =>
+app.MapPost("/gorevler", async (
+    GorevOlusturDto dto,
+    GorevContext db,
+    [FromHeader(Name = "X-Kaynak")] string? kaynak) =>
 {
-    db.Gorevler.Add(new Gorev { Baslik = dto.Baslik, Kaynak = kaynak });
-    return TypedResults.Created($"/gorevler/{dto.Id}");
+    var gorev = new Gorev { Baslik = dto.Baslik, Kaynak = kaynak };
+    db.Gorevler.Add(gorev);
+    await db.SaveChangesAsync();
+    return TypedResults.Created($"/gorevler/{gorev.Id}");
 });
 
 // Açık belirteçler: [FromRoute] [FromQuery] [FromBody] [FromServices] [AsParameters]

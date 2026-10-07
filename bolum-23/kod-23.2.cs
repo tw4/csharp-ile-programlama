@@ -6,4 +6,7 @@ string? ad = KaynaktanAl();
 if (ad is null)
     throw new InvalidOperationException("Ad boş olamaz.");
 
-Console.WriteLine(ad!.Length); // burada mantıksal güvence var
+Console.WriteLine(ad.Length);   // ! gerekmez
+
+// ! yalnızca derleyicinin göremediği güvence varsa:
+string ulke = ulkeler["TR"]!;   // "TR" başlangıçta doğrulandı

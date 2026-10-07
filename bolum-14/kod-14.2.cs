@@ -12,4 +12,4 @@ public class Yonetici : Calisan
 }
 
 Calisan c = new Yonetici();
-Console.WriteLine(c.MaasHesapla());  // 45000 -> çalışma zamanı tipi belirler
+Console.WriteLine(c.MaasHesapla());  // 45000,0 -> çalışma zamanı tipi belirler
