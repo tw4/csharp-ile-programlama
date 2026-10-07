@@ -11,4 +11,8 @@ public class EPostaGonderici : MesajGonderici
     public sealed override string Kanal() => "E-Posta";
 }
 
-// public class OzelGonderici : EPostaGonderici { } // Derleme hatası: sealed override genişletilemez
+public class OzelGonderici : EPostaGonderici  // serbest
+{
+    // Derleme hatası (CS0239): sealed üye yeniden ezilemez
+    // public override string Kanal() => "Özel";
+}

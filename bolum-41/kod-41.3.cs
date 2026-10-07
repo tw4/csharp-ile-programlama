@@ -7,7 +7,7 @@ static (byte[] ozet, byte[] tuz) ParolaOzetle(string parola)
 {
     byte[] tuz = RandomNumberGenerator.GetBytes(16);
     byte[] ozet = Rfc2898DeriveBytes.Pbkdf2(
-        parola, tuz, iterations: 210_000, HashAlgorithmName.SHA256, 32);
+        parola, tuz, iterations: 600_000, HashAlgorithmName.SHA256, 32);
 
     return (ozet, tuz);
 }

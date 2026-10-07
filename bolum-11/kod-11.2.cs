@@ -3,7 +3,7 @@
 
 string s = "  C# Programlama  ";
 
-s.Length                     // 19
+s.Length                     // 18
 s.Trim()                     // "C# Programlama"
 s.TrimStart(); s.TrimEnd()   // yalnızca baş / son
 s.ToUpper(); s.ToLower()     // BÜYÜK / küçük  (kültüre duyarlı!)

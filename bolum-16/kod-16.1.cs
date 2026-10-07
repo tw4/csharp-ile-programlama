@@ -12,6 +12,7 @@ public readonly struct Koordinat
         Boylam = boylam;
     }
 
+    // Derece cinsinden kaba yaklaşım (gerçek km: Haversine)
     public double KusBakisiMesafe(Koordinat diger)
     {
         double dEnlem = Enlem - diger.Enlem;

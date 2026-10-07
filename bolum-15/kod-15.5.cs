@@ -7,8 +7,13 @@ public sealed class Urun : IComparable<Urun>, IEquatable<Urun>
     public required string Ad { get; init; }
     public decimal Fiyat { get; init; }
 
-    public int CompareTo(Urun? other) =>
-        other is null ? 1 : Fiyat.CompareTo(other.Fiyat);
+    public int CompareTo(Urun? other)
+    {
+        if (other is null) return 1;
+        int fark = Fiyat.CompareTo(other.Fiyat);
+        return fark != 0 ? fark
+                         : string.CompareOrdinal(Kod, other.Kod);
+    }   // eşit fiyatta koda bakar: Equals ile tutarlı
 
     public bool Equals(Urun? other) =>
         other is not null && Kod == other.Kod;

@@ -6,7 +6,7 @@ string json = $$"""
 {
     "ad": "{{ad}}",
     "aktif": true,
-    "yol": "C:\Projeler\Kitap"
+    "yol": "C:\\Projeler\\Kitap"
 }
 """;
 

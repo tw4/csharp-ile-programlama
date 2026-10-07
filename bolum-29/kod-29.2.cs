@@ -7,6 +7,8 @@ public class Ayar
     public int ZamanAsimi
     {
         get => field;
-        set => field = value < 1 ? 30 : value;
+        set => field = value >= 1
+            ? value
+            : throw new ArgumentOutOfRangeException(nameof(value));
     } = 30;
 }

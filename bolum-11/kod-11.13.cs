@@ -16,4 +16,5 @@ s.Sum();  s.Average();  s.Min();  s.Max()
 s.Distinct()                 // yinelenenleri at
 s.Take(3);  s.Skip(2)        // sayfalama ikilisi
 s.Contains(7)                // içeriyor mu?
-s.ToList();  s.ToArray();  s.ToDictionary(x => x)
+s.ToList();  s.ToArray()
+s.Distinct().ToDictionary(x => x)  // tekrarlı anahtarda hata
